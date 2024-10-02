@@ -39,6 +39,12 @@ public class Hero {
         this.type = type;
     }
 
+    public void updateHero(String name, Integer gen, String type) {
+        this.name = name;
+        this.gen = gen;
+        this.type = type;
+    }
+
     /**
      * 연관관계 - Foreign Key 값을 따로 컬럼으로 정의하지 않고 연관 관계로 정의합니다.
      */
