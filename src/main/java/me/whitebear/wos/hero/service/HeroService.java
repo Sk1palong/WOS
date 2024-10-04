@@ -1,5 +1,6 @@
 package me.whitebear.wos.hero.service;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.hero.Hero;
 import me.whitebear.wos.hero.dto.request.HeroSaveReq;
@@ -56,6 +57,16 @@ public class HeroService {
         hero.updateHero(req.getName(), req.getGen(), req.getType());
 
         HeroUpdateRes res = new HeroUpdateRes(hero);
+
+        return res;
+    }
+
+    public List<HeroGetRes> getHeroList() {
+        List<Hero> heroList = heroRepository.findAll();
+
+        List<HeroGetRes> res = heroList.stream().map(
+            hero -> HeroGetRes.builder().id(hero.getId()).type(hero.getType()).name(hero.getName())
+                .gen(hero.getGen()).build()).toList();
 
         return res;
     }

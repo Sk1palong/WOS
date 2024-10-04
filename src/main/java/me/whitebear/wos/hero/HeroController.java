@@ -1,5 +1,7 @@
 package me.whitebear.wos.hero;
 
+import java.util.ArrayList;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.hero.dto.request.HeroSaveReq;
 import me.whitebear.wos.hero.dto.request.HeroUpdateReq;
@@ -37,8 +39,16 @@ public class HeroController {
         return res;
     }
 
+    @GetMapping()
+    public List<HeroGetRes> getHeroes() {
+        List<HeroGetRes> res = heroService.getHeroList();
+
+        return res;
+    }
+
     @PutMapping("/{id}")
     public HeroUpdateRes updateHero(@PathVariable Long id, @RequestBody HeroUpdateReq req) {
+
         HeroUpdateRes res = heroService.updateHero(id, req);
 
         return res;
