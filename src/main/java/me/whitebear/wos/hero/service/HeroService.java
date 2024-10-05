@@ -65,8 +65,13 @@ public class HeroService {
         List<Hero> heroList = heroRepository.findAll();
 
         List<HeroGetRes> res = heroList.stream().map(
-            hero -> HeroGetRes.builder().id(hero.getId()).type(hero.getType()).name(hero.getName())
-                .gen(hero.getGen()).build()).toList();
+                hero -> HeroGetRes.builder()
+                    .id(hero.getId())
+                    .type(hero.getType())
+                    .name(hero.getName())
+                    .gen(hero.getGen())
+                    .build())
+            .toList();
 
         return res;
     }
