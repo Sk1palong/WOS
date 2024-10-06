@@ -1,14 +1,15 @@
 package me.whitebear.wos.hero;
 
-import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.hero.dto.request.HeroSaveReq;
 import me.whitebear.wos.hero.dto.request.HeroUpdateReq;
+import me.whitebear.wos.hero.dto.response.HeroDeleteRes;
 import me.whitebear.wos.hero.dto.response.HeroGetRes;
 import me.whitebear.wos.hero.dto.response.HeroSaveRes;
 import me.whitebear.wos.hero.dto.response.HeroUpdateRes;
 import me.whitebear.wos.hero.service.HeroService;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,6 +51,13 @@ public class HeroController {
     public HeroUpdateRes updateHero(@PathVariable Long id, @RequestBody HeroUpdateReq req) {
 
         HeroUpdateRes res = heroService.updateHero(id, req);
+
+        return res;
+    }
+
+    @DeleteMapping("{id}")
+    public HeroDeleteRes deleteHero(@PathVariable Long id) {
+        HeroDeleteRes res = heroService.deleteHero(id);
 
         return res;
     }

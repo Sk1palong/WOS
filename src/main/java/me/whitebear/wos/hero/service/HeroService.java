@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.hero.Hero;
 import me.whitebear.wos.hero.dto.request.HeroSaveReq;
 import me.whitebear.wos.hero.dto.request.HeroUpdateReq;
+import me.whitebear.wos.hero.dto.response.HeroDeleteRes;
 import me.whitebear.wos.hero.dto.response.HeroGetRes;
 import me.whitebear.wos.hero.dto.response.HeroSaveRes;
 import me.whitebear.wos.hero.dto.response.HeroUpdateRes;
@@ -38,7 +39,7 @@ public class HeroService {
     }
 
     public HeroGetRes getHero(Long id) {
-        Hero hero = heroRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        Hero hero = findHero(id);
 
         HeroGetRes res = HeroGetRes.builder()
             .id(hero.getId())
@@ -52,7 +53,7 @@ public class HeroService {
 
     @Transactional
     public HeroUpdateRes updateHero(Long id, HeroUpdateReq req) {
-        Hero hero = heroRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        Hero hero = findHero(id);
 
         hero.updateHero(req.getName(), req.getGen(), req.getType());
 
@@ -74,5 +75,24 @@ public class HeroService {
             .toList();
 
         return res;
+    }
+
+    public HeroDeleteRes deleteHero(Long id) {
+        Hero hero = findHero(id);
+
+        heroRepository.delete(hero);
+
+        HeroDeleteRes res = HeroDeleteRes.builder()
+            .id(id)
+            .name(hero.getName())
+            .build();
+
+        return res;
+    }
+
+    public Hero findHero(Long id) {
+        Hero hero = heroRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+
+        return hero;
     }
 }
