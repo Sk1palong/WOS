@@ -11,6 +11,7 @@ public class HeroUpdateRes {
     String name;
     Integer gen;
     String type;
+    String grade;
 
     @Builder
     public HeroUpdateRes(Hero hero) {
@@ -18,5 +19,6 @@ public class HeroUpdateRes {
         this.name = hero.getName();
         this.gen = hero.getGen();
         this.type = hero.getType();
+        this.grade = hero.getGrade();
     }
 }

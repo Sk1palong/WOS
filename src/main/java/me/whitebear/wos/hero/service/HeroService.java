@@ -24,6 +24,7 @@ public class HeroService {
             .name(req.getName())
             .gen(req.getGen())
             .type(req.getType())
+            .grade(req.getGrade())
             .build();
 
         Hero savedHero = heroRepository.save(hero);
@@ -33,6 +34,7 @@ public class HeroService {
             .name(savedHero.getName())
             .gen(savedHero.getGen())
             .type(savedHero.getType())
+            .grade(savedHero.getGrade())
             .build();
 
         return res;
@@ -46,6 +48,7 @@ public class HeroService {
             .gen(hero.getGen())
             .name(hero.getName())
             .type(hero.getType())
+            .grade(hero.getGrade())
             .build();
 
         return res;
@@ -71,6 +74,7 @@ public class HeroService {
                     .type(hero.getType())
                     .name(hero.getName())
                     .gen(hero.getGen())
+                    .grade(hero.getGrade())
                     .build())
             .toList();
 

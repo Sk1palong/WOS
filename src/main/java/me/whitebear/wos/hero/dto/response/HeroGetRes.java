@@ -10,13 +10,14 @@ public class HeroGetRes {
     String name;
     Integer gen;
     String type;
+    String grade;
 
     @Builder
-    public HeroGetRes(Long id, String name, Integer gen, String type) {
+    public HeroGetRes(Long id, String name, Integer gen, String type, String grade) {
         this.id = id;
         this.name = name;
         this.gen = gen;
         this.type = type;
+        this.grade = grade;
     }
-
 }
