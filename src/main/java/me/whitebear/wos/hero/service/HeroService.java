@@ -2,7 +2,7 @@ package me.whitebear.wos.hero.service;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import me.whitebear.wos.hero.Hero;
+import me.whitebear.wos.hero.store.Hero;
 import me.whitebear.wos.hero.dto.request.HeroSaveReq;
 import me.whitebear.wos.hero.dto.request.HeroUpdateReq;
 import me.whitebear.wos.hero.dto.response.HeroDeleteRes;

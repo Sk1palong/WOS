@@ -2,7 +2,7 @@ package me.whitebear.wos.hero.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;
-import me.whitebear.wos.hero.Hero;
+import me.whitebear.wos.hero.store.Hero;
 
 @Getter
 public class HeroUpdateRes {

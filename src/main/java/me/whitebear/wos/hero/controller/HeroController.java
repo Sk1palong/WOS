@@ -1,4 +1,4 @@
-package me.whitebear.wos.hero;
+package me.whitebear.wos.hero.controller;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
