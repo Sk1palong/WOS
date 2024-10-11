@@ -1,4 +1,4 @@
-package me.whitebear.wos.hero.store;
+package me.whitebear.wos.hero.store.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

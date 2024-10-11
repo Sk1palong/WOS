@@ -2,14 +2,14 @@ package me.whitebear.wos.hero.service;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import me.whitebear.wos.hero.store.Hero;
+import me.whitebear.wos.hero.store.entity.Hero;
 import me.whitebear.wos.hero.dto.request.HeroSaveReq;
 import me.whitebear.wos.hero.dto.request.HeroUpdateReq;
 import me.whitebear.wos.hero.dto.response.HeroDeleteRes;
 import me.whitebear.wos.hero.dto.response.HeroGetRes;
 import me.whitebear.wos.hero.dto.response.HeroSaveRes;
 import me.whitebear.wos.hero.dto.response.HeroUpdateRes;
-import me.whitebear.wos.hero.repository.HeroRepository;
+import me.whitebear.wos.hero.store.repository.HeroRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
