@@ -21,29 +21,32 @@ public class Skill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private Long id;
 
-    String name;
+    private String name;
 
-    String description;
+    private String type;
 
-    Integer level;
+    private String description;
 
-    Integer ppl;
+    private Integer level;
 
-    Integer percentage;
+    private Integer ppl;
+
+    private Integer percentage;
 
     /**
      * 생성자 - 약속된 형태로만 생성가능하도록 합니다.
      */
 
     @Builder
-    public Skill(String name, String description, Integer level, Integer ppl) {
+    public Skill(String name, String type, String description, Integer level, Integer ppl) {
         this.name = name;
+        this.type = type;
         this.description = description;
         this.level = level;
         this.ppl = ppl;
-        this.percentage = level * ppl;
+        this.percentage = ppl;
     }
 
     /**
