@@ -29,24 +29,18 @@ public class Skill {
 
     private String description;
 
-    private Integer level;
-
-    private Integer ppl;
-
-    private Integer percentage;
+    private String value;
 
     /**
      * 생성자 - 약속된 형태로만 생성가능하도록 합니다.
      */
 
     @Builder
-    public Skill(String name, String type, String description, Integer level, Integer ppl) {
+    public Skill(String name, String type, String description, String value) {
         this.name = name;
         this.type = type;
         this.description = description;
-        this.level = level;
-        this.ppl = ppl;
-        this.percentage = ppl;
+        this.value = value;
     }
 
     /**
