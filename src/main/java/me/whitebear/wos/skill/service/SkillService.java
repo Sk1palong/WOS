@@ -2,6 +2,7 @@ package me.whitebear.wos.skill.service;
 
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.skill.dto.request.SkillSaveReq;
+import me.whitebear.wos.skill.dto.response.SkillGetRes;
 import me.whitebear.wos.skill.dto.response.SkillSaveRes;
 import me.whitebear.wos.skill.store.Skill;
 import me.whitebear.wos.skill.store.SkillRepository;
@@ -32,5 +33,25 @@ public class SkillService {
             .build();
 
         return res;
+    }
+
+    public SkillGetRes getSkill(Long id) {
+        Skill skill = findSkill(id);
+
+        SkillGetRes res = SkillGetRes.builder()
+            .id(skill.getId())
+            .name(skill.getName())
+            .type(skill.getType())
+            .description(skill.getDescription())
+            .value(skill.getValue())
+            .build();
+
+        return res;
+    }
+
+    private Skill findSkill(Long id) {
+        Skill skill = skillRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+
+        return skill;
     }
 }
