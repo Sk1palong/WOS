@@ -1,5 +1,6 @@
 package me.whitebear.wos.skill.service;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.skill.dto.request.SkillSaveReq;
 import me.whitebear.wos.skill.dto.response.SkillGetRes;
@@ -45,6 +46,22 @@ public class SkillService {
             .description(skill.getDescription())
             .value(skill.getValue())
             .build();
+
+        return res;
+    }
+
+    public List<SkillGetRes> getSkillList() {
+        List<Skill> list = skillRepository.findAll();
+
+        List<SkillGetRes> res = list.stream().map(
+            skill -> SkillGetRes.builder()
+                .id(skill.getId())
+                .description(skill.getDescription())
+                .name(skill.getName())
+                .type(skill.getType())
+                .value(skill.getValue())
+                .build()
+        ).toList();
 
         return res;
     }
