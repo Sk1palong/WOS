@@ -35,7 +35,7 @@ public class Hero {
      */
 
     @Builder
-    public Hero(String name, Integer gen, String type, String grade) {
+    private Hero(String name, Integer gen, String type, String grade) {
         this.name = name;
         this.gen = gen;
         this.type = type;

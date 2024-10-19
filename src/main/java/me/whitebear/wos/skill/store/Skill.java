@@ -36,7 +36,7 @@ public class Skill {
      */
 
     @Builder
-    public Skill(String name, String type, String description, String value) {
+    private Skill(String name, String type, String description, String value) {
         this.name = name;
         this.type = type;
         this.description = description;
