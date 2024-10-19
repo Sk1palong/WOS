@@ -8,6 +8,7 @@ import jakarta.persistence.Table;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import me.whitebear.wos.skill.dto.request.SkillUpdateReq;
 
 @Entity
 @Getter
@@ -43,6 +44,7 @@ public class Skill {
         this.value = value;
     }
 
+
     /**
      * 연관관계 - Foreign Key 값을 따로 컬럼으로 정의하지 않고 연관 관계로 정의합니다.
      */
@@ -54,4 +56,11 @@ public class Skill {
     /**
      * 서비스 메소드 - 외부에서 엔티티를 수정할 메소드를 정의합니다. (단일 책임을 가지도록 주의합니다.)
      */
+
+    public void updateSkill(SkillUpdateReq req) {
+        this.name = req.getName();
+        this.type = req.getType();
+        this.description = req.getDescription();
+        this.value = req.getValue();
+    }
 }

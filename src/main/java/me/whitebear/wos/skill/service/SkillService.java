@@ -3,8 +3,10 @@ package me.whitebear.wos.skill.service;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.skill.dto.request.SkillSaveReq;
+import me.whitebear.wos.skill.dto.request.SkillUpdateReq;
 import me.whitebear.wos.skill.dto.response.SkillGetRes;
 import me.whitebear.wos.skill.dto.response.SkillSaveRes;
+import me.whitebear.wos.skill.dto.response.SkillUpdateRes;
 import me.whitebear.wos.skill.store.Skill;
 import me.whitebear.wos.skill.store.SkillRepository;
 import org.springframework.stereotype.Service;
@@ -66,9 +68,22 @@ public class SkillService {
         return res;
     }
 
+    public SkillUpdateRes updateSkill(Long id, SkillUpdateReq req) {
+        Skill skill = findSkill(id);
+
+        skill.updateSkill(req);
+
+        SkillUpdateRes res = SkillUpdateRes.builder()
+            .skill(skill)
+            .build();
+
+        return res;
+    }
+
     private Skill findSkill(Long id) {
         Skill skill = skillRepository.findById(id).orElseThrow(IllegalArgumentException::new);
 
         return skill;
     }
+
 }
