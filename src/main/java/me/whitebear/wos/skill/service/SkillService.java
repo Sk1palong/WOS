@@ -10,6 +10,7 @@ import me.whitebear.wos.skill.dto.response.SkillUpdateRes;
 import me.whitebear.wos.skill.store.Skill;
 import me.whitebear.wos.skill.store.SkillRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -68,6 +69,7 @@ public class SkillService {
         return res;
     }
 
+    @Transactional
     public SkillUpdateRes updateSkill(Long id, SkillUpdateReq req) {
         Skill skill = findSkill(id);
 
