@@ -4,10 +4,12 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.skill.dto.request.SkillSaveReq;
 import me.whitebear.wos.skill.dto.request.SkillUpdateReq;
+import me.whitebear.wos.skill.dto.response.SkillDeleteRes;
 import me.whitebear.wos.skill.dto.response.SkillGetRes;
 import me.whitebear.wos.skill.dto.response.SkillSaveRes;
 import me.whitebear.wos.skill.dto.response.SkillUpdateRes;
 import me.whitebear.wos.skill.service.SkillService;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,6 +49,13 @@ public class SkillController {
     @PutMapping("{id}")
     public SkillUpdateRes updateSkill(@PathVariable Long id, @RequestBody SkillUpdateReq req) {
         SkillUpdateRes res = skillService.updateSkill(id, req);
+
+        return res;
+    }
+
+    @DeleteMapping("{id}")
+    public SkillDeleteRes deleteSkill(@PathVariable Long id) {
+        SkillDeleteRes res = skillService.deleteSkill(id);
 
         return res;
     }

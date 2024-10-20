@@ -4,6 +4,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.skill.dto.request.SkillSaveReq;
 import me.whitebear.wos.skill.dto.request.SkillUpdateReq;
+import me.whitebear.wos.skill.dto.response.SkillDeleteRes;
 import me.whitebear.wos.skill.dto.response.SkillGetRes;
 import me.whitebear.wos.skill.dto.response.SkillSaveRes;
 import me.whitebear.wos.skill.dto.response.SkillUpdateRes;
@@ -88,4 +89,16 @@ public class SkillService {
         return skill;
     }
 
+    public SkillDeleteRes deleteSkill(Long id) {
+        Skill skill = findSkill(id);
+
+        skillRepository.delete(skill);
+
+        SkillDeleteRes res = SkillDeleteRes.builder()
+            .id(skill.getId())
+            .name(skill.getName())
+            .build();
+
+        return res;
+    }
 }
