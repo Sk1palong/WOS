@@ -2,6 +2,8 @@ package me.whitebear.wos.skill.service;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import me.whitebear.wos.hero.service.HeroService;
+import me.whitebear.wos.hero.store.entity.Hero;
 import me.whitebear.wos.skill.dto.request.SkillSaveReq;
 import me.whitebear.wos.skill.dto.request.SkillUpdateReq;
 import me.whitebear.wos.skill.dto.response.SkillDeleteRes;
@@ -18,9 +20,13 @@ import org.springframework.transaction.annotation.Transactional;
 public class SkillService {
 
     private final SkillRepository skillRepository;
+    private final HeroService heroService;
 
-    public SkillSaveRes saveSkill(SkillSaveReq req) {
+    public SkillSaveRes saveSkill(Long HeroId, SkillSaveReq req) {
+        Hero hero = heroService.findHero(HeroId);
+
         Skill skill = Skill.builder()
+            .hero(hero)
             .name(req.getName())
             .type(req.getType())
             .description(req.getDescription())

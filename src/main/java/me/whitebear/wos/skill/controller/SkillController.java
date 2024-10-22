@@ -25,9 +25,9 @@ public class SkillController {
 
     private final SkillService skillService;
 
-    @PostMapping
-    public SkillSaveRes saveSkill(@RequestBody SkillSaveReq req) {
-        SkillSaveRes res = skillService.saveSkill(req);
+    @PostMapping("{HeroId}")
+    public SkillSaveRes saveSkill(@PathVariable Long HeroId, @RequestBody SkillSaveReq req) {
+        SkillSaveRes res = skillService.saveSkill(HeroId, req);
 
         return res;
     }

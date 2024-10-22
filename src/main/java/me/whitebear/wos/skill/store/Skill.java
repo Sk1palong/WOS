@@ -41,7 +41,8 @@ public class Skill {
      */
 
     @Builder
-    private Skill(String name, String type, String description, String value) {
+    private Skill(Hero hero, String name, String type, String description, String value) {
+        this.hero = hero;
         this.name = name;
         this.type = type;
         this.description = description;
