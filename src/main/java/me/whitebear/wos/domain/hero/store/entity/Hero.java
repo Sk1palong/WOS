@@ -13,12 +13,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import me.whitebear.wos.domain.skill.store.Skill;
+import me.whitebear.wos.global.Timestamped;
 
 @Entity
 @Getter
 @NoArgsConstructor
 @Table(name = "hero")
-public class Hero {
+public class Hero extends Timestamped {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

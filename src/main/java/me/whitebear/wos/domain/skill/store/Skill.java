@@ -13,12 +13,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import me.whitebear.wos.domain.skill.dto.request.SkillUpdateReq;
 import me.whitebear.wos.domain.hero.store.entity.Hero;
+import me.whitebear.wos.global.Timestamped;
 
 @Entity
 @Getter
 @NoArgsConstructor
 @Table(name = "skill")
-public class Skill {
+public class Skill extends Timestamped {
 
     /**
      * 컬럼 - 연관관계 컬럼을 제외한 컬럼을 정의합니다.
