@@ -12,7 +12,7 @@ import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import me.whitebear.wos.domain.skill.store.Skill;
+import me.whitebear.wos.domain.skill.store.entity.Skill;
 import me.whitebear.wos.global.Timestamped;
 
 @Entity

@@ -4,14 +4,14 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.domain.skill.dto.request.SkillSaveReq;
 import me.whitebear.wos.domain.skill.dto.response.SkillSaveRes;
-import me.whitebear.wos.domain.skill.store.SkillRepository;
+import me.whitebear.wos.domain.skill.store.repository.SkillRepository;
 import me.whitebear.wos.domain.hero.service.HeroService;
 import me.whitebear.wos.domain.hero.store.entity.Hero;
 import me.whitebear.wos.domain.skill.dto.request.SkillUpdateReq;
 import me.whitebear.wos.domain.skill.dto.response.SkillDeleteRes;
 import me.whitebear.wos.domain.skill.dto.response.SkillGetRes;
 import me.whitebear.wos.domain.skill.dto.response.SkillUpdateRes;
-import me.whitebear.wos.domain.skill.store.Skill;
+import me.whitebear.wos.domain.skill.store.entity.Skill;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

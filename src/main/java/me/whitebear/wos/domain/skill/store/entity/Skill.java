@@ -1,4 +1,4 @@
-package me.whitebear.wos.domain.skill.store;
+package me.whitebear.wos.domain.skill.store.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

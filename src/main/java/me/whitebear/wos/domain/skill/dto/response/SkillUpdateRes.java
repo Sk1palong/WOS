@@ -2,7 +2,7 @@ package me.whitebear.wos.domain.skill.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;
-import me.whitebear.wos.domain.skill.store.Skill;
+import me.whitebear.wos.domain.skill.store.entity.Skill;
 
 @Getter
 public class SkillUpdateRes {

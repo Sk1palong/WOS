@@ -1,5 +1,6 @@
-package me.whitebear.wos.domain.skill.store;
+package me.whitebear.wos.domain.skill.store.repository;
 
+import me.whitebear.wos.domain.skill.store.entity.Skill;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
