@@ -13,6 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import me.whitebear.wos.domain.skill.dto.request.SkillUpdateReq;
 import me.whitebear.wos.domain.hero.store.entity.Hero;
+import me.whitebear.wos.domain.widget.store.entity.Widget;
 import me.whitebear.wos.global.Timestamped;
 
 @Entity
@@ -42,8 +43,9 @@ public class Skill extends Timestamped {
      */
 
     @Builder
-    private Skill(Hero hero, String name, String type, String description, String value) {
+    private Skill(Hero hero, Widget widget, String name, String type, String description, String value) {
         this.hero = hero;
+        this.widget = widget;
         this.name = name;
         this.type = type;
         this.description = description;
@@ -56,6 +58,10 @@ public class Skill extends Timestamped {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hero_id")
     private Hero hero;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "widget_id")
+    private Widget widget;
 
     /**
      * 연관관계 편의 메소드 - 반대쪽에는 연관관계 편의 메소드가 없도록 주의합니다.
