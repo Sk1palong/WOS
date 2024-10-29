@@ -2,6 +2,7 @@ package me.whitebear.wos.domain.widget.store.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -44,7 +45,7 @@ public class Widget extends Timestamped {
     @OneToMany(mappedBy = "widget", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Skill> skills;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private Hero hero;
 
     /**
