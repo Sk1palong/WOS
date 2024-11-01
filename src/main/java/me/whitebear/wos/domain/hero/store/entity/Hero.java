@@ -2,10 +2,12 @@ package me.whitebear.wos.domain.hero.store.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import me.whitebear.wos.domain.skill.store.entity.Skill;
+import me.whitebear.wos.domain.widget.store.entity.Widget;
 import me.whitebear.wos.global.Timestamped;
 
 @Entity
@@ -41,11 +44,12 @@ public class Hero extends Timestamped {
      */
 
     @Builder
-    private Hero(String name, Integer gen, String type, String grade) {
+    private Hero(String name, Integer gen, String type, String grade, Widget widget) {
         this.name = name;
         this.gen = gen;
         this.type = type;
         this.grade = grade;
+        this.widget = widget;
     }
 
     /**
@@ -53,6 +57,9 @@ public class Hero extends Timestamped {
      */
     @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Skill> skills = new ArrayList<>();
+
+    @OneToOne(fetch = FetchType.LAZY)
+    private Widget widget;
 
     /**
      * 연관관계 편의 메소드 - 반대쪽에는 연관관계 편의 메소드가 없도록 주의합니다.
