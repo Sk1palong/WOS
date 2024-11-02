@@ -9,5 +9,6 @@ public class SkillSaveReq {
     String type;
     String description;
     String value;
+    Long widgetId;
 
 }
