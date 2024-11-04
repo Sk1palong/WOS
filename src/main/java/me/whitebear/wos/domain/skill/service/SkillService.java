@@ -12,6 +12,8 @@ import me.whitebear.wos.domain.skill.dto.response.SkillDeleteRes;
 import me.whitebear.wos.domain.skill.dto.response.SkillGetRes;
 import me.whitebear.wos.domain.skill.dto.response.SkillUpdateRes;
 import me.whitebear.wos.domain.skill.store.entity.Skill;
+import me.whitebear.wos.domain.widget.service.WidgetService;
+import me.whitebear.wos.domain.widget.store.entity.Widget;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,12 +23,16 @@ public class SkillService {
 
     private final SkillRepository skillRepository;
     private final HeroService heroService;
+    private final WidgetService widgetService;
 
     public SkillSaveRes saveSkill(Long HeroId, SkillSaveReq req) {
         Hero hero = heroService.findHero(HeroId);
 
+        Widget widget = widgetService.findWidget(req.getWidgetId());
+
         Skill skill = Skill.builder()
             .hero(hero)
+            .widget(widget)
             .name(req.getName())
             .type(req.getType())
             .description(req.getDescription())
