@@ -2,8 +2,10 @@ package me.whitebear.wos.domain.widget.controller;
 
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.domain.widget.dto.request.WidgetSaveReq;
+import me.whitebear.wos.domain.widget.dto.response.WidgetDeleteRes;
 import me.whitebear.wos.domain.widget.dto.response.WidgetSaveRes;
 import me.whitebear.wos.domain.widget.service.WidgetService;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,4 +26,10 @@ public class WidgetController {
         return res;
     }
 
+    @DeleteMapping("/{WidgetId}")
+    public WidgetDeleteRes deleteWidget(@PathVariable Long WidgetId) {
+        WidgetDeleteRes res = widgetService.deleteWidget(WidgetId);
+
+        return res;
+    }
 }

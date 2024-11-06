@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.domain.hero.service.HeroService;
 import me.whitebear.wos.domain.hero.store.entity.Hero;
 import me.whitebear.wos.domain.widget.dto.request.WidgetSaveReq;
+import me.whitebear.wos.domain.widget.dto.response.WidgetDeleteRes;
 import me.whitebear.wos.domain.widget.dto.response.WidgetSaveRes;
 import me.whitebear.wos.domain.widget.store.entity.Widget;
 import me.whitebear.wos.domain.widget.store.repository.WidgetRepository;
@@ -29,6 +30,19 @@ public class WidgetService {
         WidgetSaveRes res = WidgetSaveRes.builder()
             .hero(widget.getHero())
             .widget(widget)
+            .build();
+
+        return res;
+    }
+
+    public WidgetDeleteRes deleteWidget(Long widgetId) {
+        Widget widget = findWidget(widgetId);
+
+        widgetRepository.delete(widget);
+
+        WidgetDeleteRes res = WidgetDeleteRes.builder()
+            .WidgetId(widget.getId())
+            .name(widget.getName())
             .build();
 
         return res;
