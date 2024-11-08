@@ -5,6 +5,7 @@ import me.whitebear.wos.domain.hero.service.HeroService;
 import me.whitebear.wos.domain.hero.store.entity.Hero;
 import me.whitebear.wos.domain.widget.dto.request.WidgetSaveReq;
 import me.whitebear.wos.domain.widget.dto.response.WidgetDeleteRes;
+import me.whitebear.wos.domain.widget.dto.response.WidgetGetRes;
 import me.whitebear.wos.domain.widget.dto.response.WidgetSaveRes;
 import me.whitebear.wos.domain.widget.store.entity.Widget;
 import me.whitebear.wos.domain.widget.store.repository.WidgetRepository;
@@ -52,5 +53,16 @@ public class WidgetService {
         Widget widget = widgetRepository.findById(WidgetId).orElseThrow(IllegalArgumentException::new);
 
         return widget;
+    }
+
+    public WidgetGetRes getWidget(Long widgetId) {
+        Widget widget = findWidget(widgetId);
+
+        WidgetGetRes res = WidgetGetRes.builder()
+            .WidgetName(widget.getName())
+            .WidgetId(widget.getId())
+            .build();
+
+        return res;
     }
 }
