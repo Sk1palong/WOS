@@ -1,5 +1,6 @@
 package me.whitebear.wos.domain.widget.controller;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.domain.widget.dto.request.WidgetSaveReq;
 import me.whitebear.wos.domain.widget.dto.response.WidgetDeleteRes;
@@ -31,6 +32,13 @@ public class WidgetController {
     @GetMapping("{widgetId}")
     public WidgetGetRes getWidget(@PathVariable Long widgetId) {
         WidgetGetRes res = widgetService.getWidget(widgetId);
+
+        return res;
+    }
+
+    @GetMapping
+    public List<WidgetGetRes> getWidgets() {
+        List<WidgetGetRes> res = widgetService.getWidgetList();
 
         return res;
     }

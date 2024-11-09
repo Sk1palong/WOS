@@ -1,5 +1,6 @@
 package me.whitebear.wos.domain.widget.service;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.domain.hero.service.HeroService;
 import me.whitebear.wos.domain.hero.store.entity.Hero;
@@ -49,12 +50,6 @@ public class WidgetService {
         return res;
     }
 
-    public Widget findWidget(Long WidgetId) {
-        Widget widget = widgetRepository.findById(WidgetId).orElseThrow(IllegalArgumentException::new);
-
-        return widget;
-    }
-
     public WidgetGetRes getWidget(Long widgetId) {
         Widget widget = findWidget(widgetId);
 
@@ -64,5 +59,24 @@ public class WidgetService {
             .build();
 
         return res;
+    }
+
+    public List<WidgetGetRes> getWidgetList() {
+        List<Widget> widgetList = widgetRepository.findAll();
+
+        List<WidgetGetRes> res = widgetList.stream().map(
+            widget -> WidgetGetRes.builder()
+                .WidgetId(widget.getId())
+                .WidgetName(widget.getName())
+                .build()
+        ).toList();
+
+        return res;
+    }
+
+    public Widget findWidget(Long WidgetId) {
+        Widget widget = widgetRepository.findById(WidgetId).orElseThrow(IllegalArgumentException::new);
+
+        return widget;
     }
 }
