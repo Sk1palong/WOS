@@ -24,7 +24,7 @@ public class WidgetService {
 
         Widget widget = Widget.builder()
             .hero(hero)
-            .name(req.getName())
+            .WidgetName(req.getWidgetName())
             .build();
 
         widgetRepository.save(widget);
@@ -44,7 +44,7 @@ public class WidgetService {
 
         WidgetDeleteRes res = WidgetDeleteRes.builder()
             .WidgetId(widget.getId())
-            .name(widget.getName())
+            .name(widget.getWidgetName())
             .build();
 
         return res;
@@ -54,7 +54,7 @@ public class WidgetService {
         Widget widget = findWidget(widgetId);
 
         WidgetGetRes res = WidgetGetRes.builder()
-            .WidgetName(widget.getName())
+            .WidgetName(widget.getWidgetName())
             .WidgetId(widget.getId())
             .build();
 
@@ -67,7 +67,7 @@ public class WidgetService {
         List<WidgetGetRes> res = widgetList.stream().map(
             widget -> WidgetGetRes.builder()
                 .WidgetId(widget.getId())
-                .WidgetName(widget.getName())
+                .WidgetName(widget.getWidgetName())
                 .build()
         ).toList();
 

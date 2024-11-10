@@ -28,15 +28,15 @@ public class Widget extends Timestamped {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String WidgetName;
 
     /**
      * 생성자 - 약속된 형태로만 생성가능하도록 합니다.
      */
     @Builder
-    private Widget(Hero hero, String name) {
+    private Widget(Hero hero, String WidgetName) {
         this.hero = hero;
-        this.name = name;
+        this.WidgetName = WidgetName;
     }
 
     /**

@@ -5,6 +5,6 @@ import lombok.Getter;
 @Getter
 public class WidgetSaveReq {
 
-    String name;
+    String WidgetName;
 
 }
