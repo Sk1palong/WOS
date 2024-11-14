@@ -5,12 +5,15 @@ import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.domain.hero.service.HeroService;
 import me.whitebear.wos.domain.hero.store.entity.Hero;
 import me.whitebear.wos.domain.widget.dto.request.WidgetSaveReq;
+import me.whitebear.wos.domain.widget.dto.request.WidgetUpdateReq;
 import me.whitebear.wos.domain.widget.dto.response.WidgetDeleteRes;
 import me.whitebear.wos.domain.widget.dto.response.WidgetGetRes;
 import me.whitebear.wos.domain.widget.dto.response.WidgetSaveRes;
+import me.whitebear.wos.domain.widget.dto.response.WidgetUpdateRes;
 import me.whitebear.wos.domain.widget.store.entity.Widget;
 import me.whitebear.wos.domain.widget.store.repository.WidgetRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -70,6 +73,19 @@ public class WidgetService {
                 .WidgetName(widget.getWidgetName())
                 .build()
         ).toList();
+
+        return res;
+    }
+
+    @Transactional
+    public WidgetUpdateRes updateWidget(Long widgetId, WidgetUpdateReq req) {
+        Widget widget = findWidget(widgetId);
+
+        widget.updateWidget(req);
+
+        WidgetUpdateRes res = WidgetUpdateRes.builder()
+            .widgetName(widget.getWidgetName())
+            .build();
 
         return res;
     }
