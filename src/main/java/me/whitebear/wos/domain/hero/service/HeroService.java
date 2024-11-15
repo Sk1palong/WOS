@@ -40,11 +40,11 @@ public class HeroService {
         return res;
     }
 
-    public HeroGetRes getHero(Long id) {
-        Hero hero = findHero(id);
+    public HeroGetRes getHero(Long heroId) {
+        Hero hero = findHero(heroId);
 
         HeroGetRes res = HeroGetRes.builder()
-            .id(hero.getId())
+            .heroId(hero.getId())
             .gen(hero.getGen())
             .name(hero.getName())
             .type(hero.getType())
@@ -70,7 +70,7 @@ public class HeroService {
 
         List<HeroGetRes> res = heroList.stream().map(
                 hero -> HeroGetRes.builder()
-                    .id(hero.getId())
+                    .heroId(hero.getId())
                     .type(hero.getType())
                     .name(hero.getName())
                     .gen(hero.getGen())

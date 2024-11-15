@@ -33,9 +33,9 @@ public class HeroController {
         return res;
     }
 
-    @GetMapping("/{id}")
-    public HeroGetRes getHero(@PathVariable Long id) {
-        HeroGetRes res = heroService.getHero(id);
+    @GetMapping("/{heroId}")
+    public HeroGetRes getHero(@PathVariable Long heroId) {
+        HeroGetRes res = heroService.getHero(heroId);
 
         return res;
     }
