@@ -47,10 +47,10 @@ public class HeroController {
         return res;
     }
 
-    @PutMapping("/{id}")
-    public HeroUpdateRes updateHero(@PathVariable Long id, @RequestBody HeroUpdateReq req) {
+    @PutMapping("/{heroId}")
+    public HeroUpdateRes updateHero(@PathVariable Long heroId, @RequestBody HeroUpdateReq req) {
 
-        HeroUpdateRes res = heroService.updateHero(id, req);
+        HeroUpdateRes res = heroService.updateHero(heroId, req);
 
         return res;
     }

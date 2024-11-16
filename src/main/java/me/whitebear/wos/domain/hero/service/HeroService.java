@@ -55,8 +55,8 @@ public class HeroService {
     }
 
     @Transactional
-    public HeroUpdateRes updateHero(Long id, HeroUpdateReq req) {
-        Hero hero = findHero(id);
+    public HeroUpdateRes updateHero(Long heroId, HeroUpdateReq req) {
+        Hero hero = findHero(heroId);
 
         hero.updateHero(req.getName(), req.getGen(), req.getType());
 
