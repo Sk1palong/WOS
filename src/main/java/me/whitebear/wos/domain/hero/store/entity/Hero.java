@@ -14,6 +14,7 @@ import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import me.whitebear.wos.domain.hero.dto.request.HeroUpdateReq;
 import me.whitebear.wos.domain.skill.store.entity.Skill;
 import me.whitebear.wos.domain.widget.store.entity.Widget;
 import me.whitebear.wos.global.Timestamped;
@@ -69,9 +70,9 @@ public class Hero extends Timestamped {
      * 서비스 메소드 - 외부에서 엔티티를 수정할 메소드를 정의합니다. (단일 책임을 가지도록 주의합니다.)
      */
 
-    public void updateHero(String name, Integer gen, String type) {
-        this.name = name;
-        this.gen = gen;
-        this.type = type;
+    public void updateHero(HeroUpdateReq req) {
+        this.name = req.getName();
+        this.gen = req.getGen();
+        this.type = req.getType();
     }
 }

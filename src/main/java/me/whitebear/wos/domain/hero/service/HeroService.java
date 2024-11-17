@@ -58,7 +58,7 @@ public class HeroService {
     public HeroUpdateRes updateHero(Long heroId, HeroUpdateReq req) {
         Hero hero = findHero(heroId);
 
-        hero.updateHero(req.getName(), req.getGen(), req.getType());
+        hero.updateHero(req);
 
         HeroUpdateRes res = new HeroUpdateRes(hero);
 
