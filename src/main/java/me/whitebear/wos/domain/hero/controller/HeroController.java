@@ -9,6 +9,8 @@ import me.whitebear.wos.domain.hero.dto.response.HeroGetRes;
 import me.whitebear.wos.domain.hero.dto.response.HeroSaveRes;
 import me.whitebear.wos.domain.hero.dto.response.HeroUpdateRes;
 import me.whitebear.wos.domain.hero.service.HeroService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,11 +28,11 @@ public class HeroController {
     private final HeroService heroService;
 
     @PostMapping
-    public HeroSaveRes saveHero(@RequestBody HeroSaveReq req) {
+    public ResponseEntity<HeroSaveRes> saveHero(@RequestBody HeroSaveReq req) {
 
         HeroSaveRes res = heroService.saveHero(req);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.CREATED).body(res);
     }
 
     @GetMapping("/{heroId}")
