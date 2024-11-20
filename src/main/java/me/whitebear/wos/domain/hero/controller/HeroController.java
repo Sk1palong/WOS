@@ -36,10 +36,10 @@ public class HeroController {
     }
 
     @GetMapping("/{heroId}")
-    public HeroGetRes getHero(@PathVariable Long heroId) {
+    public ResponseEntity<HeroGetRes> getHero(@PathVariable Long heroId) {
         HeroGetRes res = heroService.getHero(heroId);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
     @GetMapping()
