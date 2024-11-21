@@ -43,10 +43,10 @@ public class HeroController {
     }
 
     @GetMapping()
-    public List<HeroGetRes> getHeroes() {
+    public ResponseEntity<List<HeroGetRes>> getHeroes() {
         List<HeroGetRes> res = heroService.getHeroList();
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
     @PutMapping("/{heroId}")
