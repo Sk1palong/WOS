@@ -50,11 +50,11 @@ public class HeroController {
     }
 
     @PutMapping("/{heroId}")
-    public HeroUpdateRes updateHero(@PathVariable Long heroId, @RequestBody HeroUpdateReq req) {
+    public ResponseEntity<HeroUpdateRes> updateHero(@PathVariable Long heroId, @RequestBody HeroUpdateReq req) {
 
         HeroUpdateRes res = heroService.updateHero(heroId, req);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
     @DeleteMapping("{id}")
