@@ -5,12 +5,12 @@ import lombok.Getter;
 
 @Getter
 public class HeroDeleteRes {
-    Long id;
+    Long heroId;
     String name;
 
     @Builder
-    public HeroDeleteRes(Long id, String name) {
-        this.id = id;
+    public HeroDeleteRes(Long heroId, String name) {
+        this.heroId = heroId;
         this.name = name;
     }
 }

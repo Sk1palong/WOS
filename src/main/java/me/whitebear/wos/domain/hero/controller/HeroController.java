@@ -57,9 +57,9 @@ public class HeroController {
         return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
-    @DeleteMapping("{id}")
-    public HeroDeleteRes deleteHero(@PathVariable Long id) {
-        HeroDeleteRes res = heroService.deleteHero(id);
+    @DeleteMapping("{heroId}")
+    public HeroDeleteRes deleteHero(@PathVariable Long heroId) {
+        HeroDeleteRes res = heroService.deleteHero(heroId);
 
         return res;
     }

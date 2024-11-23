@@ -81,13 +81,13 @@ public class HeroService {
         return res;
     }
 
-    public HeroDeleteRes deleteHero(Long id) {
-        Hero hero = findHero(id);
+    public HeroDeleteRes deleteHero(Long heroId) {
+        Hero hero = findHero(heroId);
 
         heroRepository.delete(hero);
 
         HeroDeleteRes res = HeroDeleteRes.builder()
-            .id(id)
+            .heroId(heroId)
             .name(hero.getName())
             .build();
 
