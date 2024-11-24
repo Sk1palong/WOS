@@ -58,9 +58,9 @@ public class HeroController {
     }
 
     @DeleteMapping("{heroId}")
-    public HeroDeleteRes deleteHero(@PathVariable Long heroId) {
+    public ResponseEntity<HeroDeleteRes> deleteHero(@PathVariable Long heroId) {
         HeroDeleteRes res = heroService.deleteHero(heroId);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 }
