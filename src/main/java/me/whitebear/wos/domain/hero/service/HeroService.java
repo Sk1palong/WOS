@@ -94,8 +94,8 @@ public class HeroService {
         return res;
     }
 
-    public Hero findHero(Long id) {
-        Hero hero = heroRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+    public Hero findHero(Long heroId) {
+        Hero hero = heroRepository.findById(heroId).orElseThrow(IllegalArgumentException::new);
 
         return hero;
     }
