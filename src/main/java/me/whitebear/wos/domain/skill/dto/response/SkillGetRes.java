@@ -6,15 +6,15 @@ import lombok.Getter;
 @Getter
 public class SkillGetRes {
 
-    Long id;
+    Long skillId;
     String name;
     String type;
     String description;
     String value;
 
     @Builder
-    public SkillGetRes(Long id, String name, String type, String description, String value) {
-        this.id = id;
+    public SkillGetRes(Long skillId, String name, String type, String description, String value) {
+        this.skillId = skillId;
         this.name = name;
         this.type = type;
         this.description = description;

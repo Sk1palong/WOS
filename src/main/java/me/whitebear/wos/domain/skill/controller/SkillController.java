@@ -34,9 +34,9 @@ public class SkillController {
         return ResponseEntity.status(HttpStatus.CREATED).body(res);
     }
 
-    @GetMapping("/{id}")
-    public SkillGetRes getSkill(@PathVariable Long id) {
-        SkillGetRes res = skillService.getSkill(id);
+    @GetMapping("/{skillId}")
+    public SkillGetRes getSkill(@PathVariable Long skillId) {
+        SkillGetRes res = skillService.getSkill(skillId);
 
         return res;
     }
