@@ -9,6 +9,8 @@ import me.whitebear.wos.domain.skill.dto.response.SkillDeleteRes;
 import me.whitebear.wos.domain.skill.dto.response.SkillGetRes;
 import me.whitebear.wos.domain.skill.dto.response.SkillUpdateRes;
 import me.whitebear.wos.domain.skill.service.SkillService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,10 +28,10 @@ public class SkillController {
     private final SkillService skillService;
 
     @PostMapping("/{HeroId}")
-    public SkillSaveRes saveSkill(@PathVariable Long HeroId, @RequestBody SkillSaveReq req) {
+    public ResponseEntity<SkillSaveRes> saveSkill(@PathVariable Long HeroId, @RequestBody SkillSaveReq req) {
         SkillSaveRes res = skillService.saveSkill(HeroId, req);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.CREATED).body(res);
     }
 
     @GetMapping("/{id}")
