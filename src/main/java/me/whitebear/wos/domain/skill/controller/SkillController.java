@@ -35,10 +35,10 @@ public class SkillController {
     }
 
     @GetMapping("/{skillId}")
-    public SkillGetRes getSkill(@PathVariable Long skillId) {
+    public ResponseEntity<SkillGetRes> getSkill(@PathVariable Long skillId) {
         SkillGetRes res = skillService.getSkill(skillId);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
     @GetMapping
