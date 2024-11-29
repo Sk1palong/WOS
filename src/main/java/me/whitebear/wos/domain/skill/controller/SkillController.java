@@ -42,10 +42,10 @@ public class SkillController {
     }
 
     @GetMapping
-    public List<SkillGetRes> getSkills() {
+    public ResponseEntity<List<SkillGetRes>> getSkills() {
         List<SkillGetRes> res = skillService.getSkillList();
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
     @PutMapping("{id}")
