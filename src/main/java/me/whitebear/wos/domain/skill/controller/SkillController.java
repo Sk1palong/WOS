@@ -48,9 +48,9 @@ public class SkillController {
         return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
-    @PutMapping("{id}")
-    public SkillUpdateRes updateSkill(@PathVariable Long id, @RequestBody SkillUpdateReq req) {
-        SkillUpdateRes res = skillService.updateSkill(id, req);
+    @PutMapping("{skillId}")
+    public SkillUpdateRes updateSkill(@PathVariable Long skillId, @RequestBody SkillUpdateReq req) {
+        SkillUpdateRes res = skillService.updateSkill(skillId, req);
 
         return res;
     }

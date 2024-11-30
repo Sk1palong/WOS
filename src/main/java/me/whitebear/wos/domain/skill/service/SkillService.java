@@ -83,8 +83,8 @@ public class SkillService {
     }
 
     @Transactional
-    public SkillUpdateRes updateSkill(Long id, SkillUpdateReq req) {
-        Skill skill = findSkill(id);
+    public SkillUpdateRes updateSkill(Long skillId, SkillUpdateReq req) {
+        Skill skill = findSkill(skillId);
 
         skill.updateSkill(req);
 
