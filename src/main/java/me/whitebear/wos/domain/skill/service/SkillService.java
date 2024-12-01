@@ -101,13 +101,13 @@ public class SkillService {
         return skill;
     }
 
-    public SkillDeleteRes deleteSkill(Long id) {
-        Skill skill = findSkill(id);
+    public SkillDeleteRes deleteSkill(Long skillId) {
+        Skill skill = findSkill(skillId);
 
         skillRepository.delete(skill);
 
         SkillDeleteRes res = SkillDeleteRes.builder()
-            .id(skill.getId())
+            .skillId(skill.getId())
             .name(skill.getName())
             .build();
 

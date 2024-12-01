@@ -55,9 +55,9 @@ public class SkillController {
         return res;
     }
 
-    @DeleteMapping("{id}")
-    public SkillDeleteRes deleteSkill(@PathVariable Long id) {
-        SkillDeleteRes res = skillService.deleteSkill(id);
+    @DeleteMapping("{skillId}")
+    public SkillDeleteRes deleteSkill(@PathVariable Long skillId) {
+        SkillDeleteRes res = skillService.deleteSkill(skillId);
 
         return res;
     }
