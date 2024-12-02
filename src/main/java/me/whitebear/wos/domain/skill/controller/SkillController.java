@@ -49,10 +49,10 @@ public class SkillController {
     }
 
     @PutMapping("{skillId}")
-    public SkillUpdateRes updateSkill(@PathVariable Long skillId, @RequestBody SkillUpdateReq req) {
+    public ResponseEntity<SkillUpdateRes> updateSkill(@PathVariable Long skillId, @RequestBody SkillUpdateReq req) {
         SkillUpdateRes res = skillService.updateSkill(skillId, req);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
     @DeleteMapping("{skillId}")
