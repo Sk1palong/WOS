@@ -56,9 +56,9 @@ public class SkillController {
     }
 
     @DeleteMapping("{skillId}")
-    public SkillDeleteRes deleteSkill(@PathVariable Long skillId) {
+    public ResponseEntity<SkillDeleteRes> deleteSkill(@PathVariable Long skillId) {
         SkillDeleteRes res = skillService.deleteSkill(skillId);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 }
