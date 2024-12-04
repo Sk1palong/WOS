@@ -9,6 +9,8 @@ import me.whitebear.wos.domain.widget.dto.response.WidgetGetRes;
 import me.whitebear.wos.domain.widget.dto.response.WidgetSaveRes;
 import me.whitebear.wos.domain.widget.dto.response.WidgetUpdateRes;
 import me.whitebear.wos.domain.widget.service.WidgetService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,10 +28,10 @@ public class WidgetController {
     private final WidgetService widgetService;
 
     @PostMapping("/{heroId}")
-    public WidgetSaveRes saveWidget(@PathVariable Long heroId, @RequestBody WidgetSaveReq req) {
+    public ResponseEntity<WidgetSaveRes> saveWidget(@PathVariable Long heroId, @RequestBody WidgetSaveReq req) {
         WidgetSaveRes res = widgetService.saveWidget(heroId, req);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
     @GetMapping("{widgetId}")
