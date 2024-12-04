@@ -31,7 +31,7 @@ public class WidgetController {
     public ResponseEntity<WidgetSaveRes> saveWidget(@PathVariable Long heroId, @RequestBody WidgetSaveReq req) {
         WidgetSaveRes res = widgetService.saveWidget(heroId, req);
 
-        return ResponseEntity.status(HttpStatus.OK).body(res);
+        return ResponseEntity.status(HttpStatus.CREATED).body(res);
     }
 
     @GetMapping("{widgetId}")
