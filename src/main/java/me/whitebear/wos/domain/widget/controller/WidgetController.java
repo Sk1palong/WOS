@@ -35,10 +35,10 @@ public class WidgetController {
     }
 
     @GetMapping("{widgetId}")
-    public WidgetGetRes getWidget(@PathVariable Long widgetId) {
+    public ResponseEntity<WidgetGetRes> getWidget(@PathVariable Long widgetId) {
         WidgetGetRes res = widgetService.getWidget(widgetId);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
     @GetMapping
