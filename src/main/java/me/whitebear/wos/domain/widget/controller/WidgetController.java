@@ -42,10 +42,10 @@ public class WidgetController {
     }
 
     @GetMapping
-    public List<WidgetGetRes> getWidgets() {
+    public ResponseEntity<List<WidgetGetRes>> getWidgets() {
         List<WidgetGetRes> res = widgetService.getWidgetList();
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
     @PutMapping("/{widgetId}")
