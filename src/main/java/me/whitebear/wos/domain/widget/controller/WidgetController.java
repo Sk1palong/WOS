@@ -49,10 +49,10 @@ public class WidgetController {
     }
 
     @PutMapping("/{widgetId}")
-    public WidgetUpdateRes updateWidget(@PathVariable Long widgetId, @RequestBody WidgetUpdateReq req) {
+    public ResponseEntity<WidgetUpdateRes> updateWidget(@PathVariable Long widgetId, @RequestBody WidgetUpdateReq req) {
         WidgetUpdateRes res = widgetService.updateWidget(widgetId, req);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
     @DeleteMapping("/{widgetId}")
