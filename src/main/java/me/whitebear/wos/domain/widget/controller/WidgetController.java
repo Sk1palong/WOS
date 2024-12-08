@@ -56,9 +56,9 @@ public class WidgetController {
     }
 
     @DeleteMapping("/{widgetId}")
-    public WidgetDeleteRes deleteWidget(@PathVariable Long widgetId) {
+    public ResponseEntity<WidgetDeleteRes> deleteWidget(@PathVariable Long widgetId) {
         WidgetDeleteRes res = widgetService.deleteWidget(widgetId);
 
-        return res;
+        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 }
