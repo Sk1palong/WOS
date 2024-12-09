@@ -30,7 +30,7 @@ public class HeroService {
         Hero savedHero = heroRepository.save(hero);
 
         HeroSaveRes res = HeroSaveRes.builder()
-            .id(savedHero.getId())
+            .id(savedHero.getHeroId())
             .name(savedHero.getName())
             .gen(savedHero.getGen())
             .type(savedHero.getType())
@@ -44,7 +44,7 @@ public class HeroService {
         Hero hero = findHero(heroId);
 
         HeroGetRes res = HeroGetRes.builder()
-            .heroId(hero.getId())
+            .heroId(hero.getHeroId())
             .gen(hero.getGen())
             .name(hero.getName())
             .type(hero.getType())
@@ -70,7 +70,7 @@ public class HeroService {
 
         List<HeroGetRes> res = heroList.stream().map(
                 hero -> HeroGetRes.builder()
-                    .heroId(hero.getId())
+                    .heroId(hero.getHeroId())
                     .type(hero.getType())
                     .name(hero.getName())
                     .gen(hero.getGen())
