@@ -30,7 +30,7 @@ public class HeroService {
         Hero savedHero = heroRepository.save(hero);
 
         HeroSaveRes res = HeroSaveRes.builder()
-            .id(savedHero.getHeroId())
+            .heroId(savedHero.getHeroId())
             .name(savedHero.getName())
             .gen(savedHero.getGen())
             .type(savedHero.getType())
