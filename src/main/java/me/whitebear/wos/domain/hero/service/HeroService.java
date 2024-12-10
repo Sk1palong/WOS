@@ -21,7 +21,7 @@ public class HeroService {
 
     public HeroSaveRes saveHero(HeroSaveReq req) {
         Hero hero = Hero.builder()
-            .name(req.getName())
+            .heroName(req.getName())
             .gen(req.getGen())
             .type(req.getType())
             .grade(req.getGrade())
@@ -31,7 +31,7 @@ public class HeroService {
 
         HeroSaveRes res = HeroSaveRes.builder()
             .heroId(savedHero.getHeroId())
-            .name(savedHero.getName())
+            .name(savedHero.getHeroName())
             .gen(savedHero.getGen())
             .type(savedHero.getType())
             .grade(savedHero.getGrade())
@@ -46,7 +46,7 @@ public class HeroService {
         HeroGetRes res = HeroGetRes.builder()
             .heroId(hero.getHeroId())
             .gen(hero.getGen())
-            .name(hero.getName())
+            .name(hero.getHeroName())
             .type(hero.getType())
             .grade(hero.getGrade())
             .build();
@@ -72,7 +72,7 @@ public class HeroService {
                 hero -> HeroGetRes.builder()
                     .heroId(hero.getHeroId())
                     .type(hero.getType())
-                    .name(hero.getName())
+                    .name(hero.getHeroName())
                     .gen(hero.getGen())
                     .grade(hero.getGrade())
                     .build())
@@ -88,7 +88,7 @@ public class HeroService {
 
         HeroDeleteRes res = HeroDeleteRes.builder()
             .heroId(heroId)
-            .name(hero.getName())
+            .name(hero.getHeroName())
             .build();
 
         return res;

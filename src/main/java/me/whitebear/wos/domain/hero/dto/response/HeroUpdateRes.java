@@ -16,7 +16,7 @@ public class HeroUpdateRes {
     @Builder
     public HeroUpdateRes(Hero hero) {
         this.heroId = hero.getHeroId();
-        this.name = hero.getName();
+        this.name = hero.getHeroName();
         this.gen = hero.getGen();
         this.type = hero.getType();
         this.grade = hero.getGrade();

@@ -32,7 +32,7 @@ public class Hero extends Timestamped {
     /**
      * 컬럼 - 연관관계 컬럼을 제외한 컬럼을 정의합니다.
      */
-    private String name;
+    private String heroName;
 
     private Integer gen;
 
@@ -45,8 +45,8 @@ public class Hero extends Timestamped {
      */
 
     @Builder
-    private Hero(String name, Integer gen, String type, String grade, Widget widget) {
-        this.name = name;
+    private Hero(String heroName, Integer gen, String type, String grade, Widget widget) {
+        this.heroName = heroName;
         this.gen = gen;
         this.type = type;
         this.grade = grade;
@@ -71,7 +71,7 @@ public class Hero extends Timestamped {
      */
 
     public void updateHero(HeroUpdateReq req) {
-        this.name = req.getName();
+        this.heroName = req.getName();
         this.gen = req.getGen();
         this.type = req.getType();
     }
