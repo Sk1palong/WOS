@@ -21,7 +21,7 @@ public class HeroService {
 
     public HeroSaveRes saveHero(HeroSaveReq req) {
         Hero hero = Hero.builder()
-            .heroName(req.getName())
+            .heroName(req.getHeroName())
             .gen(req.getGen())
             .type(req.getType())
             .grade(req.getGrade())
