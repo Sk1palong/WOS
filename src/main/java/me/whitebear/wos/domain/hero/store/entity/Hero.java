@@ -71,7 +71,7 @@ public class Hero extends Timestamped {
      */
 
     public void updateHero(HeroUpdateReq req) {
-        this.heroName = req.getName();
+        this.heroName = req.getHeroName();
         this.gen = req.getGen();
         this.type = req.getType();
     }

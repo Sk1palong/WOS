@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public class HeroUpdateReq {
 
-    String name;
+    String heroName;
     Integer gen;
     String type;
     String grade;
