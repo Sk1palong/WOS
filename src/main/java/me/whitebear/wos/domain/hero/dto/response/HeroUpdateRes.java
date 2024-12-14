@@ -8,7 +8,7 @@ import me.whitebear.wos.domain.hero.store.entity.Hero;
 public class HeroUpdateRes {
 
     Long heroId;
-    String name;
+    String heroName;
     Integer gen;
     String type;
     String grade;
@@ -16,7 +16,7 @@ public class HeroUpdateRes {
     @Builder
     public HeroUpdateRes(Hero hero) {
         this.heroId = hero.getHeroId();
-        this.name = hero.getHeroName();
+        this.heroName = hero.getHeroName();
         this.gen = hero.getGen();
         this.type = hero.getType();
         this.grade = hero.getGrade();
