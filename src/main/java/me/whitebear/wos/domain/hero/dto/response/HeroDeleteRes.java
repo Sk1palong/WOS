@@ -6,11 +6,11 @@ import lombok.Getter;
 @Getter
 public class HeroDeleteRes {
     Long heroId;
-    String name;
+    String heroName;
 
     @Builder
-    public HeroDeleteRes(Long heroId, String name) {
+    public HeroDeleteRes(Long heroId, String heroName) {
         this.heroId = heroId;
-        this.name = name;
+        this.heroName = heroName;
     }
 }
