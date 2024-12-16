@@ -7,15 +7,15 @@ import lombok.Getter;
 public class HeroGetRes {
 
     Long heroId;
-    String name;
+    String heroName;
     Integer gen;
     String type;
     String grade;
 
     @Builder
-    public HeroGetRes(Long heroId, String name, Integer gen, String type, String grade) {
+    public HeroGetRes(Long heroId, String heroName, Integer gen, String type, String grade) {
         this.heroId = heroId;
-        this.name = name;
+        this.heroName = heroName;
         this.gen = gen;
         this.type = type;
         this.grade = grade;
