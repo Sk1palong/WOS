@@ -33,7 +33,7 @@ public class SkillService {
         Skill skill = Skill.builder()
             .hero(hero)
             .widget(widget)
-            .name(req.getName())
+            .name(req.getSkillName())
             .type(req.getType())
             .description(req.getDescription())
             .value(req.getValue())

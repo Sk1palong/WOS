@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public class SkillSaveReq {
 
-    String name;
+    String skillName;
     String type;
     String description;
     String value;
