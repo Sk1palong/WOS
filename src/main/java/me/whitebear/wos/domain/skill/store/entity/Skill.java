@@ -72,7 +72,7 @@ public class Skill extends Timestamped {
      */
 
     public void updateSkill(SkillUpdateReq req) {
-        this.name = req.getName();
+        this.name = req.getSkillName();
         this.type = req.getType();
         this.description = req.getDescription();
         this.value = req.getValue();
