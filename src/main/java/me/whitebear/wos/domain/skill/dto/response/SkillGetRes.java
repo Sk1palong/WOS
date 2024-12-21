@@ -7,15 +7,14 @@ import lombok.Getter;
 public class SkillGetRes {
 
     Long skillId;
-    String name;
+    String skillName;
     String type;
     String description;
     String value;
 
-    @Builder
-    public SkillGetRes(Long skillId, String name, String type, String description, String value) {
+    public SkillGetRes(Long skillId, String skillName, String type, String description, String value) {
         this.skillId = skillId;
-        this.name = name;
+        this.skillName = skillName;
         this.type = type;
         this.description = description;
         this.value = value;
