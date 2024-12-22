@@ -6,20 +6,20 @@ import lombok.Getter;
 @Getter
 public class SkillSaveRes {
 
-    Long id;
-    String name;
+    Long skillId;
+    String skillName;
     String type;
     String description;
     String value;
-    String widget;
+    String widgetName;
 
     @Builder
-    public SkillSaveRes(Long id, String name, String type, String description, String value, String widget) {
-        this.id = id;
-        this.name = name;
+    public SkillSaveRes(Long skillId, String skillName, String type, String description, String value, String widgetName) {
+        this.skillId = skillId;
+        this.skillName = skillName;
         this.type = type;
         this.description = description;
         this.value = value;
-        this.widget = widget;
+        this.widgetName = widgetName;
     }
 }
