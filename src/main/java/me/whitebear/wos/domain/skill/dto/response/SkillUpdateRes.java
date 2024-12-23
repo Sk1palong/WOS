@@ -7,7 +7,7 @@ import me.whitebear.wos.domain.skill.store.entity.Skill;
 @Getter
 public class SkillUpdateRes {
 
-    Long id;
+    Long skillId;
     String name;
     String type;
     String description;
@@ -15,7 +15,7 @@ public class SkillUpdateRes {
 
     @Builder
     public SkillUpdateRes(Skill skill) {
-        this.id = skill.getId();
+        this.skillId = skill.getId();
         this.name = skill.getName();
         this.type = skill.getType();
         this.description = skill.getDescription();
