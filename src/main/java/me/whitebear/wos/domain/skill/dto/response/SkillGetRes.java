@@ -12,6 +12,7 @@ public class SkillGetRes {
     String description;
     String value;
 
+    @Builder
     public SkillGetRes(Long skillId, String skillName, String type, String description, String value) {
         this.skillId = skillId;
         this.skillName = skillName;
