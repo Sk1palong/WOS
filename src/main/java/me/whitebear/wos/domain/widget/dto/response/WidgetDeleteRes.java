@@ -7,11 +7,11 @@ import lombok.Getter;
 public class WidgetDeleteRes {
 
     Long widgetId;
-    String name;
+    String widgetName;
 
     @Builder
-    public WidgetDeleteRes(Long widgetId, String name) {
+    public WidgetDeleteRes(Long widgetId, String widgetName) {
         this.widgetId = widgetId;
-        this.name = name;
+        this.widgetName = widgetName;
     }
 }
