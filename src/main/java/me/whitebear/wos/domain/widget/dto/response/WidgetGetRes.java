@@ -6,12 +6,12 @@ import lombok.Getter;
 @Getter
 public class WidgetGetRes {
 
-    Long WidgetId;
+    Long widgetId;
     String WidgetName;
 
     @Builder
-    public WidgetGetRes(Long WidgetId, String WidgetName) {
-        this.WidgetId = WidgetId;
+    public WidgetGetRes(Long widgetId, String WidgetName) {
+        this.widgetId = widgetId;
         this.WidgetName = WidgetName;
     }
 }
