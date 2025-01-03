@@ -8,13 +8,13 @@ import me.whitebear.wos.domain.widget.store.entity.Widget;
 @Getter
 public class WidgetSaveRes {
     Long widgetId;
-    String name;
+    String widgetName;
     String heroName;
 
     @Builder
     public WidgetSaveRes(Widget widget, Hero hero) {
         this.widgetId = widget.getId();
-        this.name = widget.getWidgetName();
+        this.widgetName = widget.getWidgetName();
         this.heroName = hero.getHeroName();
     }
 }
