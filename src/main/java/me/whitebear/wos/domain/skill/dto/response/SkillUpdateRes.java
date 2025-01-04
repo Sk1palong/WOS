@@ -15,7 +15,7 @@ public class SkillUpdateRes {
 
     @Builder
     public SkillUpdateRes(Skill skill) {
-        this.skillId = skill.getId();
+        this.skillId = skill.getSkillId();
         this.skillName = skill.getName();
         this.type = skill.getType();
         this.description = skill.getDescription();

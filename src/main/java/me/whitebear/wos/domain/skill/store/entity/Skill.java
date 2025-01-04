@@ -28,7 +28,7 @@ public class Skill extends Timestamped {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long skillId;
 
     private String name;
 

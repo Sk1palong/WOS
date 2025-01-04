@@ -42,7 +42,7 @@ public class SkillService {
         skillRepository.save(skill);
 
         SkillSaveRes res = SkillSaveRes.builder()
-            .skillId(skill.getId())
+            .skillId(skill.getSkillId())
             .skillName(skill.getName())
             .type(skill.getType())
             .description(skill.getDescription())
@@ -56,7 +56,7 @@ public class SkillService {
         Skill skill = findSkill(skillId);
 
         SkillGetRes res = SkillGetRes.builder()
-            .skillId(skill.getId())
+            .skillId(skill.getSkillId())
             .skillName(skill.getName())
             .type(skill.getType())
             .description(skill.getDescription())
@@ -71,7 +71,7 @@ public class SkillService {
 
         List<SkillGetRes> res = list.stream().map(
             skill -> SkillGetRes.builder()
-                .skillId(skill.getId())
+                .skillId(skill.getSkillId())
                 .description(skill.getDescription())
                 .skillName(skill.getName())
                 .type(skill.getType())
@@ -107,7 +107,7 @@ public class SkillService {
         skillRepository.delete(skill);
 
         SkillDeleteRes res = SkillDeleteRes.builder()
-            .skillId(skill.getId())
+            .skillId(skill.getSkillId())
             .skillName(skill.getName())
             .build();
 
