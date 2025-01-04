@@ -13,7 +13,7 @@ public class WidgetSaveRes {
 
     @Builder
     public WidgetSaveRes(Widget widget, Hero hero) {
-        this.widgetId = widget.getId();
+        this.widgetId = widget.getWidgetId();
         this.widgetName = widget.getWidgetName();
         this.heroName = hero.getHeroName();
     }

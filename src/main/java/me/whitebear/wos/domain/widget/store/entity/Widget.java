@@ -27,7 +27,7 @@ public class Widget extends Timestamped {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long widgetId;
 
     private String WidgetName;
 

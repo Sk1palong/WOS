@@ -46,7 +46,7 @@ public class WidgetService {
         widgetRepository.delete(widget);
 
         WidgetDeleteRes res = WidgetDeleteRes.builder()
-            .widgetId(widget.getId())
+            .widgetId(widget.getWidgetId())
             .widgetName(widget.getWidgetName())
             .build();
 
@@ -58,7 +58,7 @@ public class WidgetService {
 
         WidgetGetRes res = WidgetGetRes.builder()
             .widgetName(widget.getWidgetName())
-            .widgetId(widget.getId())
+            .widgetId(widget.getWidgetId())
             .build();
 
         return res;
@@ -70,7 +70,7 @@ public class WidgetService {
         List<WidgetGetRes> res = widgetList.stream().map(
             widget -> WidgetGetRes.builder()
                 .widgetName(widget.getWidgetName())
-                .widgetId(widget.getId())
+                .widgetId(widget.getWidgetId())
                 .build()
         ).toList();
 
