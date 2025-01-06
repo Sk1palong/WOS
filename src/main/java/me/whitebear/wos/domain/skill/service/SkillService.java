@@ -43,7 +43,7 @@ public class SkillService {
 
         SkillSaveRes res = SkillSaveRes.builder()
             .skillId(skill.getSkillId())
-            .skillName(skill.getName())
+            .skillName(skill.getSkillName())
             .type(skill.getType())
             .description(skill.getDescription())
             .value(skill.getValue())
@@ -57,7 +57,7 @@ public class SkillService {
 
         SkillGetRes res = SkillGetRes.builder()
             .skillId(skill.getSkillId())
-            .skillName(skill.getName())
+            .skillName(skill.getSkillName())
             .type(skill.getType())
             .description(skill.getDescription())
             .value(skill.getValue())
@@ -73,7 +73,7 @@ public class SkillService {
             skill -> SkillGetRes.builder()
                 .skillId(skill.getSkillId())
                 .description(skill.getDescription())
-                .skillName(skill.getName())
+                .skillName(skill.getSkillName())
                 .type(skill.getType())
                 .value(skill.getValue())
                 .build()
@@ -108,7 +108,7 @@ public class SkillService {
 
         SkillDeleteRes res = SkillDeleteRes.builder()
             .skillId(skill.getSkillId())
-            .skillName(skill.getName())
+            .skillName(skill.getSkillName())
             .build();
 
         return res;

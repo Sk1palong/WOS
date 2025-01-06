@@ -30,7 +30,7 @@ public class Skill extends Timestamped {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long skillId;
 
-    private String name;
+    private String skillName;
 
     private String type;
 
@@ -43,10 +43,10 @@ public class Skill extends Timestamped {
      */
 
     @Builder
-    private Skill(Hero hero, Widget widget, String name, String type, String description, String value) {
+    private Skill(Hero hero, Widget widget, String skillName, String type, String description, String value) {
         this.hero = hero;
         this.widget = widget;
-        this.name = name;
+        this.skillName = skillName;
         this.type = type;
         this.description = description;
         this.value = value;
@@ -72,7 +72,7 @@ public class Skill extends Timestamped {
      */
 
     public void updateSkill(SkillUpdateReq req) {
-        this.name = req.getSkillName();
+        this.skillName = req.getSkillName();
         this.type = req.getType();
         this.description = req.getDescription();
         this.value = req.getValue();
