@@ -29,7 +29,7 @@ public class Widget extends Timestamped {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long widgetId;
 
-    private String WidgetName;
+    private String widgetName;
 
     /**
      * 생성자 - 약속된 형태로만 생성가능하도록 합니다.
@@ -37,7 +37,7 @@ public class Widget extends Timestamped {
     @Builder
     private Widget(Hero hero, String WidgetName) {
         this.hero = hero;
-        this.WidgetName = WidgetName;
+        this.widgetName = WidgetName;
     }
 
     /**
@@ -57,7 +57,7 @@ public class Widget extends Timestamped {
      * 서비스 메소드 - 외부에서 엔티티를 수정할 메소드를 정의합니다. (단일 책임을 가지도록 주의합니다.)
      */
     public void updateWidget(WidgetUpdateReq req) {
-        this.WidgetName = req.getWidgetName();
+        this.widgetName = req.getWidgetName();
     }
 
 }
