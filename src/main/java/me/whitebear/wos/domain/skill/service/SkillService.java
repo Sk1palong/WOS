@@ -47,6 +47,7 @@ public class SkillService {
             .type(skill.getType())
             .description(skill.getDescription())
             .value(skill.getValue())
+            .widgetName(skill.getWidget().getWidgetName())
             .build();
 
         return res;
