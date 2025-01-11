@@ -40,11 +40,7 @@ public class HeroService {
         Hero hero = findHero(heroId);
 
         HeroGetRes res = HeroGetRes.builder()
-            .heroId(hero.getHeroId())
-            .gen(hero.getGen())
-            .heroName(hero.getHeroName())
-            .type(hero.getType())
-            .grade(hero.getGrade())
+            .hero(hero)
             .build();
 
         return res;
