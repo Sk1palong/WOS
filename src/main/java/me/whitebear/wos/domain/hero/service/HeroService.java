@@ -62,11 +62,7 @@ public class HeroService {
 
         List<HeroGetRes> res = heroList.stream().map(
                 hero -> HeroGetRes.builder()
-                    .heroId(hero.getHeroId())
-                    .type(hero.getType())
-                    .heroName(hero.getHeroName())
-                    .gen(hero.getGen())
-                    .grade(hero.getGrade())
+                    .hero(hero)
                     .build())
             .toList();
 
