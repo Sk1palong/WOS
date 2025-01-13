@@ -14,6 +14,7 @@ import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import me.whitebear.wos.domain.hero.dto.request.HeroSaveReq;
 import me.whitebear.wos.domain.hero.dto.request.HeroUpdateReq;
 import me.whitebear.wos.domain.skill.store.entity.Skill;
 import me.whitebear.wos.domain.widget.store.entity.Widget;
@@ -45,12 +46,11 @@ public class Hero extends Timestamped {
      */
 
     @Builder
-    private Hero(String heroName, Integer gen, String type, String grade, Widget widget) {
-        this.heroName = heroName;
-        this.gen = gen;
-        this.type = type;
-        this.grade = grade;
-        this.widget = widget;
+    private Hero(HeroSaveReq req) {
+        this.heroName = req.getHeroName();
+        this.gen = req.getGen();
+        this.type = req.getType();
+        this.grade = req.getGrade();
     }
 
     /**
