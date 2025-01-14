@@ -2,6 +2,7 @@ package me.whitebear.wos.domain.hero.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;
+import me.whitebear.wos.domain.hero.store.entity.Hero;
 
 @Getter
 public class HeroDeleteRes {
@@ -9,8 +10,8 @@ public class HeroDeleteRes {
     String heroName;
 
     @Builder
-    public HeroDeleteRes(Long heroId, String heroName) {
-        this.heroId = heroId;
-        this.heroName = heroName;
+    public HeroDeleteRes(Hero hero) {
+        this.heroId = hero.getHeroId();
+        this.heroName = hero.getHeroName();
     }
 }

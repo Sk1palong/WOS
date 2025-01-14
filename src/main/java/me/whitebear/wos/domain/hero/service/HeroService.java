@@ -72,8 +72,7 @@ public class HeroService {
         heroRepository.delete(hero);
 
         HeroDeleteRes res = HeroDeleteRes.builder()
-            .heroId(heroId)
-            .heroName(hero.getHeroName())
+            .hero(hero)
             .build();
 
         return res;
