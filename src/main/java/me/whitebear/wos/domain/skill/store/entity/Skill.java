@@ -11,6 +11,7 @@ import jakarta.persistence.Table;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import me.whitebear.wos.domain.skill.dto.request.SkillSaveReq;
 import me.whitebear.wos.domain.skill.dto.request.SkillUpdateReq;
 import me.whitebear.wos.domain.hero.store.entity.Hero;
 import me.whitebear.wos.domain.widget.store.entity.Widget;
@@ -43,13 +44,13 @@ public class Skill extends Timestamped {
      */
 
     @Builder
-    private Skill(Hero hero, Widget widget, String skillName, String type, String description, String value) {
+    private Skill(Hero hero, Widget widget, SkillSaveReq req) {
         this.hero = hero;
         this.widget = widget;
-        this.skillName = skillName;
-        this.type = type;
-        this.description = description;
-        this.value = value;
+        this.skillName = req.getSkillName();
+        this.type = req.getType();
+        this.description = req.getDescription();
+        this.value = req.getValue();
     }
 
     /**
