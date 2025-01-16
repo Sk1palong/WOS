@@ -39,12 +39,7 @@ public class SkillService {
         skillRepository.save(skill);
 
         SkillSaveRes res = SkillSaveRes.builder()
-            .skillId(skill.getSkillId())
-            .skillName(skill.getSkillName())
-            .type(skill.getType())
-            .description(skill.getDescription())
-            .value(skill.getValue())
-            .widgetName(skill.getWidget().getWidgetName())
+            .skill(skill)
             .build();
 
         return res;
