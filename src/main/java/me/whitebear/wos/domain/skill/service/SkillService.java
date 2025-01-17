@@ -49,11 +49,7 @@ public class SkillService {
         Skill skill = findSkill(skillId);
 
         SkillGetRes res = SkillGetRes.builder()
-            .skillId(skill.getSkillId())
-            .skillName(skill.getSkillName())
-            .type(skill.getType())
-            .description(skill.getDescription())
-            .value(skill.getValue())
+            .skill(skill)
             .build();
 
         return res;
@@ -64,11 +60,7 @@ public class SkillService {
 
         List<SkillGetRes> res = list.stream().map(
             skill -> SkillGetRes.builder()
-                .skillId(skill.getSkillId())
-                .description(skill.getDescription())
-                .skillName(skill.getSkillName())
-                .type(skill.getType())
-                .value(skill.getValue())
+                .skill(skill)
                 .build()
         ).toList();
 
