@@ -2,6 +2,7 @@ package me.whitebear.wos.domain.skill.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;
+import me.whitebear.wos.domain.skill.store.entity.Skill;
 
 @Getter
 public class SkillDeleteRes {
@@ -9,8 +10,8 @@ public class SkillDeleteRes {
     String skillName;
 
     @Builder
-    public SkillDeleteRes(Long skillId, String skillName) {
-        this.skillId = skillId;
-        this.skillName = skillName;
+    public SkillDeleteRes(Skill skill) {
+        this.skillId = skill.getSkillId();
+        this.skillName = skill.getSkillName();
     }
 }

@@ -92,8 +92,7 @@ public class SkillService {
         skillRepository.delete(skill);
 
         SkillDeleteRes res = SkillDeleteRes.builder()
-            .skillId(skill.getSkillId())
-            .skillName(skill.getSkillName())
+            .skill(skill)
             .build();
 
         return res;
