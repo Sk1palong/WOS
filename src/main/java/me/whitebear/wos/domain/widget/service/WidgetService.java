@@ -46,8 +46,7 @@ public class WidgetService {
         widgetRepository.delete(widget);
 
         WidgetDeleteRes res = WidgetDeleteRes.builder()
-            .widgetId(widget.getWidgetId())
-            .widgetName(widget.getWidgetName())
+            .widget(widget)
             .build();
 
         return res;
