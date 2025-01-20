@@ -56,8 +56,7 @@ public class WidgetService {
         Widget widget = findWidget(widgetId);
 
         WidgetGetRes res = WidgetGetRes.builder()
-            .widgetName(widget.getWidgetName())
-            .widgetId(widget.getWidgetId())
+            .widget(widget)
             .build();
 
         return res;
@@ -68,8 +67,7 @@ public class WidgetService {
 
         List<WidgetGetRes> res = widgetList.stream().map(
             widget -> WidgetGetRes.builder()
-                .widgetName(widget.getWidgetName())
-                .widgetId(widget.getWidgetId())
+                .widget(widget)
                 .build()
         ).toList();
 
