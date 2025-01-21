@@ -81,7 +81,7 @@ public class WidgetService {
         widget.updateWidget(req);
 
         WidgetUpdateRes res = WidgetUpdateRes.builder()
-            .widgetName(widget.getWidgetName())
+            .widget(widget)
             .build();
 
         return res;
