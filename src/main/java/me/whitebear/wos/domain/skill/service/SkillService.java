@@ -80,11 +80,6 @@ public class SkillService {
         return res;
     }
 
-    private Skill findSkill(Long id) {
-        Skill skill = skillRepository.findById(id).orElseThrow(IllegalArgumentException::new);
-
-        return skill;
-    }
 
     public SkillDeleteRes deleteSkill(Long skillId) {
         Skill skill = findSkill(skillId);
@@ -97,4 +92,11 @@ public class SkillService {
 
         return res;
     }
+
+    private Skill findSkill(Long id) {
+        Skill skill = skillRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+
+        return skill;
+    }
+
 }
