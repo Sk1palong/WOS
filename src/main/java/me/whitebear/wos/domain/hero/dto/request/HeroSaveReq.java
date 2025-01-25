@@ -9,5 +9,7 @@ public class HeroSaveReq {
     Integer gen;
     String type;
     String grade;
+    Long attack;
+    Long defense;
 
 }
