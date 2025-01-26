@@ -41,9 +41,13 @@ public class Hero extends Timestamped {
 
     private String grade;
 
-    private Long attack;
+    private Long explorationAttack;
 
-    private Long defense;
+    private Long explorationDefense;
+
+    private Long expeditionAttack;
+
+    private Long expeditionDefense;
 
     /**
      * 생성자 - 약속된 형태로만 생성가능하도록 합니다.
@@ -55,8 +59,10 @@ public class Hero extends Timestamped {
         this.gen = req.getGen();
         this.type = req.getType();
         this.grade = req.getGrade();
-        this.attack = req.getAttack();
-        this.defense = req.getDefense();
+        this.expeditionAttack = req.getExpeditionAttack();
+        this.expeditionDefense = req.getExpeditionDefense();
+        this.explorationAttack = req.getExplorationAttack();
+        this.explorationDefense = req.getExplorationDefense();
     }
 
     /**
