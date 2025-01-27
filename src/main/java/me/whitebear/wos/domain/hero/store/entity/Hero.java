@@ -41,13 +41,13 @@ public class Hero extends Timestamped {
 
     private String grade;
 
-    private Long explorationAttack;
-
-    private Long explorationDefense;
-
     private Long expeditionAttack;
 
     private Long expeditionDefense;
+
+    private Long explorationAttack;
+
+    private Long explorationDefense;
 
     /**
      * 생성자 - 약속된 형태로만 생성가능하도록 합니다.
