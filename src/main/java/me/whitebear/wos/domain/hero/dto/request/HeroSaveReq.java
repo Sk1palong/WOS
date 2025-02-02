@@ -15,5 +15,6 @@ public class HeroSaveReq {
     Long explorationDefense;
     Long explorationHp;
     Long guardAttack;
+    Long guardDefense;
 
 }

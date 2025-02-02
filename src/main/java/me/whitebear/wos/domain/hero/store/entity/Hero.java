@@ -52,6 +52,8 @@ public class Hero extends Timestamped {
     private Long explorationHp;
 
     private Long guardAttack;
+
+    private Long guardDefense;
     /**
      * 생성자 - 약속된 형태로만 생성가능하도록 합니다.
      */
@@ -68,6 +70,7 @@ public class Hero extends Timestamped {
         this.explorationDefense = req.getExplorationDefense();
         this.explorationHp = req.getExplorationHp();
         this.guardAttack = req.getGuardAttack();
+        this.guardDefense = req.getGuardDefense();
     }
 
     /**
