@@ -99,5 +99,6 @@ public class Hero extends Timestamped {
         this.heroName = req.getHeroName();
         this.gen = req.getGen();
         this.type = req.getType();
+        this.grade = req.getGrade();
     }
 }

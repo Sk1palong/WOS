@@ -9,5 +9,7 @@ public class HeroUpdateReq {
     Integer gen;
     String type;
     String grade;
+    Long expeditionAttack;
+    Long expeditionDefense;
 
 }
