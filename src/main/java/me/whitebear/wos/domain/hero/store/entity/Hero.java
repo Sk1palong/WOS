@@ -100,5 +100,9 @@ public class Hero extends Timestamped {
         this.gen = req.getGen();
         this.type = req.getType();
         this.grade = req.getGrade();
+        this.expeditionAttack = req.getExpeditionAttack();
+        this.expeditionDefense = req.getExpeditionDefense();
+        this.explorationAttack = req.getExplorationAttack();
+        this.explorationDefense = req.getExplorationDefense();
     }
 }

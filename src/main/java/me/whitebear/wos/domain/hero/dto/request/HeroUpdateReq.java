@@ -11,5 +11,7 @@ public class HeroUpdateReq {
     String grade;
     Long expeditionAttack;
     Long expeditionDefense;
+    Long explorationAttack;
+    Long explorationDefense;
 
 }
