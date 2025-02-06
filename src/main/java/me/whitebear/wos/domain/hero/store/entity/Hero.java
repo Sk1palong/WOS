@@ -96,6 +96,7 @@ public class Hero extends Timestamped {
      */
 
     public void updateHero(HeroUpdateReq req) {
+
         this.heroName = req.getHeroName();
         this.gen = req.getGen();
         this.type = req.getType();
@@ -104,5 +105,7 @@ public class Hero extends Timestamped {
         this.expeditionDefense = req.getExpeditionDefense();
         this.explorationAttack = req.getExplorationAttack();
         this.explorationDefense = req.getExplorationDefense();
+        this.explorationHp = req.getExplorationHp();
+
     }
 }
