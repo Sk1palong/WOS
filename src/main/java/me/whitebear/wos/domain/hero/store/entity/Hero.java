@@ -106,6 +106,7 @@ public class Hero extends Timestamped {
         this.explorationAttack = req.getExplorationAttack();
         this.explorationDefense = req.getExplorationDefense();
         this.explorationHp = req.getExplorationHp();
+        this.guardAttack = req.getGuardAttack();
 
     }
 }
