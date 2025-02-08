@@ -15,4 +15,6 @@ public class HeroUpdateReq {
     Long explorationDefense;
     Long explorationHp;
     Long guardAttack;
+    Long guardDefense;
+
 }
