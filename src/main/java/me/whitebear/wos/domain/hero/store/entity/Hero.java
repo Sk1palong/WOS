@@ -64,6 +64,7 @@ public class Hero extends Timestamped {
 
     @Builder
     private Hero(HeroSaveReq req) {
+
         this.heroName = req.getHeroName();
         this.gen = req.getGen();
         this.type = req.getType();
@@ -76,6 +77,7 @@ public class Hero extends Timestamped {
         this.guardAttack = req.getGuardAttack();
         this.guardDefense = req.getGuardDefense();
         this.guardHp = req.getGuardHp();
+
     }
 
     /**
@@ -109,5 +111,6 @@ public class Hero extends Timestamped {
         this.guardAttack = req.getGuardAttack();
         this.guardDefense = req.getGuardDefense();
         this.guardHp = req.getGuardHp();
+
     }
 }
