@@ -14,6 +14,7 @@ public class HeroUpdateRes {
     String grade;
     Long expeditionAttack;
     Long expeditionDefense;
+    Long explorationHp;
 
     @Builder
     public HeroUpdateRes(Hero hero) {
@@ -24,5 +25,6 @@ public class HeroUpdateRes {
         this.grade = hero.getGrade();
         this.expeditionAttack = hero.getExpeditionAttack();
         this.expeditionDefense = hero.getExpeditionDefense();
+        this.explorationHp = hero.getExplorationHp();
     }
 }
