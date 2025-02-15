@@ -15,6 +15,7 @@ public class HeroUpdateRes {
     Long expeditionAttack;
     Long expeditionDefense;
     Long explorationHp;
+    Long guardAttack;
 
     @Builder
     public HeroUpdateRes(Hero hero) {
@@ -26,5 +27,6 @@ public class HeroUpdateRes {
         this.expeditionAttack = hero.getExpeditionAttack();
         this.expeditionDefense = hero.getExpeditionDefense();
         this.explorationHp = hero.getExplorationHp();
+        this.guardAttack = hero.getGuardAttack();
     }
 }
