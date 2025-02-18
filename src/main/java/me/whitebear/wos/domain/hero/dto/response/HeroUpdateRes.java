@@ -17,6 +17,7 @@ public class HeroUpdateRes {
     Long explorationHp;
     Long guardAttack;
     Long guardDefense;
+    Long guardHp;
 
     @Builder
     public HeroUpdateRes(Hero hero) {
@@ -30,5 +31,6 @@ public class HeroUpdateRes {
         this.explorationHp = hero.getExplorationHp();
         this.guardAttack = hero.getGuardAttack();
         this.guardDefense = hero.getGuardDefense();
+        this.guardHp = hero.getGuardHp();
     }
 }
