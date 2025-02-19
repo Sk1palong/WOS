@@ -21,6 +21,7 @@ public class HeroUpdateRes {
 
     @Builder
     public HeroUpdateRes(Hero hero) {
+
         this.heroId = hero.getHeroId();
         this.heroName = hero.getHeroName();
         this.gen = hero.getGen();
@@ -32,5 +33,6 @@ public class HeroUpdateRes {
         this.guardAttack = hero.getGuardAttack();
         this.guardDefense = hero.getGuardDefense();
         this.guardHp = hero.getGuardHp();
+
     }
 }
