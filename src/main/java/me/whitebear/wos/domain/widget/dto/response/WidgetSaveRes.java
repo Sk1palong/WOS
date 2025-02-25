@@ -7,6 +7,7 @@ import me.whitebear.wos.domain.widget.store.entity.Widget;
 
 @Getter
 public class WidgetSaveRes {
+
     Long widgetId;
     String widgetName;
     String heroName;
