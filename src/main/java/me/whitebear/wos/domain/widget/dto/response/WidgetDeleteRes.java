@@ -12,7 +12,9 @@ public class WidgetDeleteRes {
 
     @Builder
     public WidgetDeleteRes(Widget widget) {
+
         this.widgetId = widget.getWidgetId();
         this.widgetName = widget.getWidgetName();
+
     }
 }
