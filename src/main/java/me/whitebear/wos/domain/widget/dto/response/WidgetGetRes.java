@@ -12,7 +12,9 @@ public class WidgetGetRes {
 
     @Builder
     public WidgetGetRes(Widget widget) {
+
         this.widgetId = widget.getWidgetId();
         this.widgetName = widget.getWidgetName();
+
     }
 }
