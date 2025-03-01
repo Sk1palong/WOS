@@ -11,7 +11,9 @@ public class HeroDeleteRes {
 
     @Builder
     public HeroDeleteRes(Hero hero) {
+
         this.heroId = hero.getHeroId();
         this.heroName = hero.getHeroName();
+
     }
 }
