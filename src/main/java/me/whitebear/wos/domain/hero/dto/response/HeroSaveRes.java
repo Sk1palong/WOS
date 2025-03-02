@@ -15,10 +15,12 @@ public class HeroSaveRes {
 
     @Builder
     public HeroSaveRes(Hero hero) {
+
         this.heroId = hero.getHeroId();
         this.heroName = hero.getHeroName();
         this.gen = hero.getGen();
         this.type = hero.getType();
         this.grade = hero.getGrade();
+
     }
 }
