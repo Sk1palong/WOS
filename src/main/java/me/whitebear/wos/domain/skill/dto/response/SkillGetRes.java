@@ -15,10 +15,12 @@ public class SkillGetRes {
 
     @Builder
     public SkillGetRes(Skill skill) {
+
         this.skillId = skill.getSkillId();
         this.skillName = skill.getSkillName();
         this.type = skill.getType();
         this.description = skill.getDescription();
         this.value = skill.getValue();
+
     }
 }
