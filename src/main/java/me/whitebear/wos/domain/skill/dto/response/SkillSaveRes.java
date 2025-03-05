@@ -16,11 +16,13 @@ public class SkillSaveRes {
 
     @Builder
     public SkillSaveRes(Skill skill) {
+
         this.skillId = skill.getSkillId();
         this.skillName = skill.getSkillName();
         this.type = skill.getType();
         this.description = skill.getDescription();
         this.value = skill.getValue();
         this.widgetName = skill.getWidget().getWidgetName();
+
     }
 }
