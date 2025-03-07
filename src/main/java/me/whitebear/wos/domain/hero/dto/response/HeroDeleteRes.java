@@ -6,6 +6,7 @@ import me.whitebear.wos.domain.hero.store.entity.Hero;
 
 @Getter
 public class HeroDeleteRes {
+
     Long heroId;
     String heroName;
 
