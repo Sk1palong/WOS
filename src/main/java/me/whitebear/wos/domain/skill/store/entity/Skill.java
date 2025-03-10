@@ -45,12 +45,14 @@ public class Skill extends Timestamped {
 
     @Builder
     private Skill(Hero hero, Widget widget, SkillSaveReq req) {
+
         this.hero = hero;
         this.widget = widget;
         this.skillName = req.getSkillName();
         this.type = req.getType();
         this.description = req.getDescription();
         this.value = req.getValue();
+
     }
 
     /**
