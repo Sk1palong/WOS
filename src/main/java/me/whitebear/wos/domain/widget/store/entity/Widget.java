@@ -36,8 +36,10 @@ public class Widget extends Timestamped {
      */
     @Builder
     private Widget(Hero hero, String WidgetName) {
+
         this.hero = hero;
         this.widgetName = WidgetName;
+
     }
 
     /**
