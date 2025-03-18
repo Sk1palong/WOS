@@ -63,5 +63,4 @@ public class Widget extends Timestamped {
         this.widgetName = req.getWidgetName();
 
     }
-
 }
