@@ -17,4 +17,5 @@ public class HeroDeleteRes {
         this.heroName = hero.getHeroName();
 
     }
+
 }
