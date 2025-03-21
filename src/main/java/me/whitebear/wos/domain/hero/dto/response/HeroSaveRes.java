@@ -23,4 +23,5 @@ public class HeroSaveRes {
         this.grade = hero.getGrade();
 
     }
+
 }
