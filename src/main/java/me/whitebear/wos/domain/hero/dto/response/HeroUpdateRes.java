@@ -35,4 +35,5 @@ public class HeroUpdateRes {
         this.guardHp = hero.getGuardHp();
 
     }
+
 }
