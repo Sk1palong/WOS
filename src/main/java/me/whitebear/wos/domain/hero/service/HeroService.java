@@ -82,6 +82,7 @@ public class HeroService {
         Hero hero = heroRepository.findById(heroId).orElseThrow(IllegalArgumentException::new);
 
         return hero;
+
     }
 
 }

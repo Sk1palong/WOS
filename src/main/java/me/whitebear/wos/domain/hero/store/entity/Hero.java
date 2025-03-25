@@ -113,4 +113,5 @@ public class Hero extends Timestamped {
         this.guardHp = req.getGuardHp();
 
     }
+
 }
