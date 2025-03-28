@@ -17,4 +17,5 @@ public class SkillDeleteRes {
         this.skillName = skill.getSkillName();
 
     }
+
 }
