@@ -23,4 +23,5 @@ public class SkillGetRes {
         this.value = skill.getValue();
 
     }
+
 }
