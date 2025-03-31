@@ -25,4 +25,5 @@ public class SkillSaveRes {
         this.widgetName = skill.getWidget().getWidgetName();
 
     }
+
 }
