@@ -82,4 +82,5 @@ public class Skill extends Timestamped {
         this.value = req.getValue();
 
     }
+
 }
