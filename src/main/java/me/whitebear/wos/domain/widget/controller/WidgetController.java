@@ -61,4 +61,5 @@ public class WidgetController {
 
         return ResponseEntity.status(HttpStatus.OK).body(res);
     }
+
 }
