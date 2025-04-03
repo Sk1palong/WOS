@@ -17,4 +17,5 @@ public class WidgetDeleteRes {
         this.widgetName = widget.getWidgetName();
 
     }
+
 }
