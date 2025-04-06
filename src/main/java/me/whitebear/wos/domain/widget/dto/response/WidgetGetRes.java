@@ -17,4 +17,5 @@ public class WidgetGetRes {
         this.widgetName = widget.getWidgetName();
 
     }
+
 }
