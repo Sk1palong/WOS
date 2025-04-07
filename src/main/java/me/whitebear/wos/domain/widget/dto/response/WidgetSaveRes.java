@@ -20,4 +20,5 @@ public class WidgetSaveRes {
         this.heroName = hero.getHeroName();
 
     }
+
 }
