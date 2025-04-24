@@ -64,5 +64,4 @@ public class HeroController {
         return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
-
 }
