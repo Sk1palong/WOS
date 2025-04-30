@@ -1,6 +1,7 @@
 package me.whitebear.wos.domain.heroGear.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,9 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HeroGearController {
 
     @PostMapping
-    public String saveHeroGears() {
-        return "saved hero gears";
+    public String saveHeroGear() {
+        return "saved hero gear";
     }
-
 
 }
