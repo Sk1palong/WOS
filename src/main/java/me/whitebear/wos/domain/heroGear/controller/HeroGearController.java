@@ -16,4 +16,9 @@ public class HeroGearController {
         return "saved hero gear";
     }
 
+    @GetMapping()
+    public String getHeroGear() {
+        return "get hero gear";
+    }
+
 }
