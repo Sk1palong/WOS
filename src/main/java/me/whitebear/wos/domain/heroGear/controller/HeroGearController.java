@@ -21,4 +21,9 @@ public class HeroGearController {
         return "get hero gear";
     }
 
+    @GetMapping()
+    public String getAllHeroGear() {
+        return "get all hero gear";
+    }
+
 }
