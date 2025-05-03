@@ -3,6 +3,7 @@ package me.whitebear.wos.domain.heroGear.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ public class HeroGearController {
         return "saved hero gear";
     }
 
-    @GetMapping()
+    @GetMapping("{herogearId}")
     public String getHeroGear() {
         return "get hero gear";
     }
@@ -25,5 +26,6 @@ public class HeroGearController {
     public String getAllHeroGear() {
         return "get all hero gear";
     }
+
 
 }
