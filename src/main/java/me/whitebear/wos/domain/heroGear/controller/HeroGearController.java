@@ -27,5 +27,9 @@ public class HeroGearController {
         return "get all hero gear";
     }
 
+    @PutMapping("{herogearId}")
+    public String updateHeroGear() {
+        return "update hero gear";
+    }
 
 }
