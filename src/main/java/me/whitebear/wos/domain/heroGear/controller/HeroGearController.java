@@ -1,6 +1,7 @@
 package me.whitebear.wos.domain.heroGear.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,6 +31,11 @@ public class HeroGearController {
     @PutMapping("{herogearId}")
     public String updateHeroGear() {
         return "update hero gear";
+    }
+
+    @DeleteMapping("{hergearId}")
+    public String deleteHeroGear() {
+        return "delete hero gear";
     }
 
 }
