@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -25,7 +26,14 @@ public class HeroGear {
     /**
      * 생성자 - 약속된 형태로만 생성가능하도록 합니다.
      */
+    @Builder
+    private HeroGear(String heroGearName, String type, String grade) {
 
+        this.heroGearName = heroGearName;
+        this.type = type;
+        this.grade = grade;
+
+    }
 
     /**
      * 연관관계 - Foreign Key 값을 따로 컬럼으로 정의하지 않고 연관 관계로 정의합니다.
