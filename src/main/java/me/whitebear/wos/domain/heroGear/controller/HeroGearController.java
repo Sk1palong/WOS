@@ -1,10 +1,15 @@
 package me.whitebear.wos.domain.heroGear.controller;
 
 import lombok.RequiredArgsConstructor;
+import me.whitebear.wos.domain.hero.dto.request.HeroSaveReq;
+import me.whitebear.wos.domain.hero.dto.response.HeroSaveRes;
+import me.whitebear.wos.domain.heroGear.dto.request.HeroGearSaveReq;
+import me.whitebear.wos.domain.heroGear.dto.response.HeroGearSaveRes;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,8 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class HeroGearController {
 
     @PostMapping
-    public String saveHeroGear() {
-        return "saved hero gear";
+    public HeroGearSaveRes saveHeroGear(@RequestBody HeroGearSaveReq req) {
+        HeroGearSaveRes res = HeroGearSaveRes.builder()
+            .heroGearName(req.getHeroGearName())
+            .type(req.getType())
+            .grade(req.getGrade())
+            .build();
+
+        return res;
     }
 
     @GetMapping("{herogearId}")
