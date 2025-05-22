@@ -33,11 +33,13 @@ public class HeroGearController {
 
     @GetMapping("{herogearId}")
     public HeroGearGetRes getHeroGear(@PathVariable Long herogearId) {
+
         HeroGearGetRes res = HeroGearGetRes.builder()
             .HeroGearId(herogearId)
             .build();
 
         return res;
+
     }
 
     @GetMapping()
