@@ -1,5 +1,7 @@
 package me.whitebear.wos.domain.heroGear.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.whitebear.wos.domain.hero.dto.request.HeroSaveReq;
 import me.whitebear.wos.domain.hero.dto.response.HeroSaveRes;
@@ -43,8 +45,10 @@ public class HeroGearController {
     }
 
     @GetMapping()
-    public String getAllHeroGear() {
-        return "get all hero gear";
+    public List<HeroGearGetRes> getAllHeroGear() {
+        List<HeroGearGetRes> res = new ArrayList<>();
+
+        return res;
     }
 
     @PutMapping("{herogearId}")
