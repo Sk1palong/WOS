@@ -41,11 +41,11 @@ public class HeroGearController {
             .build();
 
         return res;
-
     }
 
     @GetMapping()
     public List<HeroGearGetRes> getAllHeroGear() {
+
         List<HeroGearGetRes> res = new ArrayList<>();
 
         return res;
@@ -53,11 +53,13 @@ public class HeroGearController {
 
     @PutMapping("{herogearId}")
     public String updateHeroGear() {
+
         return "update hero gear";
     }
 
     @DeleteMapping("{hergearId}")
     public String deleteHeroGear() {
+
         return "delete hero gear";
     }
 
