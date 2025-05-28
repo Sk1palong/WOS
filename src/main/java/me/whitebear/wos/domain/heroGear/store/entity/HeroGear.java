@@ -15,7 +15,7 @@ public class HeroGear {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long HeroGearId;
+    private Long heroGearId;
 
     /**
      * 컬럼 - 연관관계 컬럼을 제외한 컬럼을 정의합니다.
